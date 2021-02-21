@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+ } from 'react-router-dom';
+
+
+import HomePage from '../components/Pages/HomePage/HomePage';
+import Adidas from '../../components/Pages/Adidas/Adidas';
+import Converses from '../../components/Pages/Connverse/Converses';
+
+
+
 import { MoonLoader } from 'react-spinners';
 
 import classes from './App.module.css';
@@ -87,7 +99,17 @@ class App extends Component {
             (this.state.error) ? "error" : null
           ]} />
         <main className={classes.AppMain}>
-          <div className={classes.Display}>{cardContent}</div>
+        return (
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/Users/kirstyojiem/Downloads/sneaker-api-app-main/src/components/Links/HomePage.js" component={HomePage} />
+          <Route exact path="/Users/kirstyojiem/Downloads/sneaker-api-app-main/src/components/Links/Adidas.js" component={Adidas} />
+          <Route exact path="/Users/kirstyojiem/Downloads/sneaker-api-app-main/src/components/Links/Converses.js" component={Converses} />
+        </Switch>
+      </Router>
+    </div>
+  );
         </main>
         <Footer />
       </div>
